@@ -29,6 +29,18 @@
   })(window, document, "clarity", "script", "xfc3y2g7lc");
 </script>
 
+<!-- Brevo Form assets (head) -->
+<style>
+  @font-face { font-display: block; font-family: Roboto; src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff") }
+  @font-face { font-display: fallback; font-family: Roboto; font-weight: 600; src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff") }
+  @font-face { font-display: fallback; font-family: Roboto; font-weight: 700; src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff") }
+  :where(.sib-form-message-panel) { display: none; }
+  :where(.sib-form-message-panel .sib-notification__icon) { width: 20px; height: 20px; }
+  #sib-container input::placeholder, #sib-container textarea::placeholder { font-family: Helvetica, sans-serif; text-align: left; color: #c0ccda; }
+  #sib-container a { text-decoration: underline; color: #2BB2FC; }
+</style>
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
 <style>
   :root{
     --bg:#F4F1EC;
@@ -383,17 +395,73 @@
       <h2>Quer o próximo capítulo direto no seu email?</h2>
       <p>Assine a newsletter Por Dentro e receba os próximos guias da série sobre formações na França — sem enrolação, direto ao ponto.</p>
 
-      <!-- SUBSTITUIR pelo embed real do seu formulário Brevo (Campanhas > Formulários > Compartilhar).
-           Mantendo aqui a estrutura padrão do Brevo Subscription Form (sem API), só trocar action/name dos campos. -->
-      <div class="sib-form">
-        <form id="sib-form" method="POST" action="https://SEU-ID.sibforms.com/serve/SUBSTITUIR-PELO-ID-DO-SEU-FORMULARIO" data-type="subscription">
-          <input type="email" name="EMAIL" placeholder="Seu melhor email" required>
-          <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="locale" value="pt">
-          <button type="submit" class="btn btn-block">Quero assinar a newsletter</button>
-        </form>
+      <!-- Formulário Brevo real (lista "titre pro", conta 87a2c382) -->
+      <div class="sib-form" style="text-align:center;">
+        <div id="sib-form-container" class="sib-form-container">
+          <div id="error-message" class="sib-form-message-panel" style="font-family:Helvetica, sans-serif; font-size:14px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:8px; max-width:480px; margin:0 auto 10px;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <span class="sib-form-message-panel__inner-text">Sua inscrição não pôde ser salva. Tente novamente.</span>
+            </div>
+          </div>
+          <div id="success-message" class="sib-form-message-panel" style="font-family:Helvetica, sans-serif; font-size:14px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:8px; max-width:480px; margin:0 auto 10px;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <span class="sib-form-message-panel__inner-text">Inscrição confirmada! Você vai receber os próximos capítulos da série.</span>
+            </div>
+          </div>
+          <div id="sib-container" class="sib-container--large sib-container--vertical" style="max-width:480px; margin:0 auto; text-align:left; background-color:var(--bg-card); border-width:1px; border-style:solid; border-color:var(--border); border-radius:14px; direction:ltr; padding:8px;">
+            <form id="sib-form" method="POST" action="https://87a2c382.sibforms.com/serve/MUIFAPSJTLZTI2w-MNQP-hU6lbCN2Y0xHAwvefbT-xx-Fi8zzahnWtmCHVhXzPIax0HmYdvpO9aqcvr5-7_Uvr4U8d0pA0IsBg1QZIImn4x6DGfAU9MVJGm6kiezdn16zzLXmThddEV7HXbP0Ac9QWJQ9LROYd-FIp8rZJ8V6B9w3HwFigEescMX4rZGSDEUGXlxlNVvgl2rKjrXmQ==" data-type="subscription">
+
+              <div style="padding:8px 0;">
+                <div class="sib-checkbox-group sib-form-block" data-required="true">
+                  <div class="form__entry entry_mcq">
+                    <div class="form__label-row">
+                      <label class="entry__label" style="font-weight:700; text-align:left; font-family:Helvetica, sans-serif; font-size:14px; color:var(--heading);" data-required="*">Quero receber:</label>
+                      <div>
+                        <div class="entry__choice">
+                          <label class="checkbox__label">
+                            <input type="checkbox" class="input_replaced" name="lists_25[]" data-value="titre pro" value="13" data-required="true" />
+                            <span class="checkbox checkbox_tick_positive" style="margin-left:"></span><span style="font-family:Helvetica, sans-serif; font-size:14px; text-align:left; color:var(--text);">Novidades da série sobre formações (TP, CAP e outros caminhos)</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:Helvetica, sans-serif; font-size:13px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:6px;"></label>
+                  </div>
+                </div>
+              </div>
+
+              <div style="padding:8px 0;">
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row">
+                      <label class="entry__label" style="font-weight:700; text-align:left; font-family:Helvetica, sans-serif; font-size:14px; color:var(--heading);" for="EMAIL" data-required="*">Seu melhor email</label>
+                      <div class="entry__field">
+                        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="seu@email.com" data-required="true" required style="width:100%; padding:12px 14px; border-radius:8px; border:1px solid var(--border); font-size:15px;" />
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:Helvetica, sans-serif; font-size:13px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:6px;"></label>
+                    <label class="entry__specification" style="font-family:Helvetica, sans-serif; font-size:12px; text-align:left; color:#6B6B6B;">Sem spam. Cancele quando quiser.</label>
+                  </div>
+                </div>
+              </div>
+
+              <div style="padding:8px 0;">
+                <div class="sib-form-block" style="text-align:left">
+                  <button class="sib-form-block__button sib-form-block__button-with-loader btn btn-block" style="font-family:Helvetica, sans-serif; font-size:15px; font-weight:700; color:#3A2A17; background-color:var(--accent); border-width:0px; border-radius:10px;" form="sib-form" type="submit">
+                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                      <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                    </svg>
+                    QUERO ASSINAR A NEWSLETTER
+                  </button>
+                </div>
+              </div>
+
+              <input type="text" name="email_address_check" value="" class="input--hidden">
+              <input type="hidden" name="locale" value="pt">
+            </form>
+          </div>
+        </div>
       </div>
-      <p class="form-note">Sem spam. Cancele quando quiser.</p>
     </div>
   </div>
 </section>
@@ -446,6 +514,28 @@
     <a href="https://instagram.com/pordentrofranca" target="_blank" rel="noopener" class="social">Siga @pordentrofranca</a>
   </div>
 </footer>
+
+<!-- Brevo Form assets (rodapé) -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Selecione um código de país';
+  window.LOCALE = 'pt';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "As informações fornecidas são inválidas. Verifique o formato do campo e tente novamente.";
+  window.REQUIRED_ERROR_MESSAGE = "Este campo não pode ficar em branco.";
+  window.GENERIC_INVALID_MESSAGE = "As informações fornecidas são inválidas. Verifique o formato do campo e tente novamente.";
+  window.INVALID_NUMBER = "As informações fornecidas são inválidas. Verifique o formato do campo e tente novamente.";
+  window.INVALID_DATE = "Insira uma data válida";
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Selecione pelo menos 1 opção';
+  window.translation = {
+    common: {
+      selectedList: '{quantity} lista selecionada',
+      selectedLists: '{quantity} listas selecionadas',
+      selectedOption: '{quantity} selecionado',
+      selectedOptions: '{quantity} selecionados',
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 </body>
 </html>
